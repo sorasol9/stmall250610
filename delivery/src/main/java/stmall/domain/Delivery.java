@@ -45,27 +45,35 @@ public class Delivery {
     public static void startDelivery(OrderPlaced orderPlaced) {
         //implement business logic here:
 
-        /** Example 1:  new item 
+        // Example 1:  new item 
         Delivery delivery = new Delivery();
+        delivery.setOrderId(orderPlaced.getId());
+        delivery.setAdress(orderPlaced.getAdress());
+        delivery.setCustomerId(orderPlaced.getCustomerId());
+        delivery.setItemId(orderPlaced.getItemId());
+        delivery.setQty(orderPlaced.getQty());
+        delivery.setStatus("DELIVERY STARTED");
         repository().save(delivery);
 
         DeliveryCompleted deliveryCompleted = new DeliveryCompleted(delivery);
         deliveryCompleted.publishAfterCommit();
-        */
-
-        /** Example 2:  finding and process
         
 
-        repository().findById(orderPlaced.get???()).ifPresent(delivery->{
+        //Example 2:  finding and process
+        
+
+        // repository().findById(orderPlaced.getId()).ifPresent(delivery->{
             
-            delivery // do something
-            repository().save(delivery);
+        //     delivery.setOrderId(orderPlaced.getId());
+        //     // delivery.orderId = orderPlaced.getId(); // do something
+        //     repository().save(delivery);
 
-            DeliveryCompleted deliveryCompleted = new DeliveryCompleted(delivery);
-            deliveryCompleted.publishAfterCommit();
+        //     DeliveryCompleted deliveryCompleted = new DeliveryCompleted(delivery);
+        //     deliveryCompleted.publishAfterCommit();
 
-         });
-        */
+
+        //  });
+        
 
     }
 
